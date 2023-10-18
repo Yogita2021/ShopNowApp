@@ -1,0 +1,89 @@
+#navbar {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100%;
+}
+
+#navbarNav {
+  /* border: 1px solid red; */
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: flex-end;
+  width: 10px;
+  /* margin-left: 100px; */
+  gap: 500px;
+}
+#ullist {
+  /* border: 1px solid red; */
+  margin-left: 10%;
+}
+
+#ullist1 {
+  /* border: 1px solid red; */
+  margin-left: 90px;
+  gap: 50px;
+}
+#ullist3 {
+  /* border: 1px solid red; */
+  margin-left: 40%;
+  /* margin-top: 20px; */
+  height: 70px;
+  gap: 20px;
+}
+#ullist3 li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+p:hover {
+  color: red;
+  cursor: pointer;
+}
+.showCustomClass {
+  border: 1px solid red;
+}
+.custom-class {
+  border: 1px solid black;
+}
+.custom-collapse {
+  max-height: 400px; /* Set your desired height here */
+  overflow-y: auto; /* Add a scrollbar if content overflows */
+  /* border: 1px solid red; */
+}
+@media screen and (max-width: 767px) {
+  /* ul {
+    border: 1px solid red;
+    margin: 0px;
+  } */
+  /* li {
+    border: 1px solid red;
+  } */
+  #ullist3 li {
+    /* border: 1px solid black; */
+    width: 90px;
+    /* height: 10px; */
+  }
+
+  #ullist1 {
+    /* border: 1px solid red; */
+    margin-left: 10%;
+    gap: 0px;
+  }
+  #ullist1 li:hover {
+    /* border: 1px solid red; */
+    background-color: green;
+    margin-left: 10%;
+    gap: 0px;
+  }
+
+  #ullist3 {
+    /* border: 1px solid red; */
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    /* margin-top: 20px; */
+    height: 70px;
+
+    gap: 10px;
+  }
+}

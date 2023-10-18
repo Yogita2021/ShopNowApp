@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><h1>ShopNow</h1></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse custom-collapse"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="ullist1">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Mens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Womens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Kids</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search" id="ullist" *ngIf="showSearchForm">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="ullist3">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="register"
+            ><i class="fa fa-user"></i
+          ></a>
+          <p>Login/signUp</p>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-heart"></i></a>
+          <p>wishlist</p>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"
+            ><i class="fa fa-shopping-bag"></i><span></span
+          ></a>
+          <p>bag</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
