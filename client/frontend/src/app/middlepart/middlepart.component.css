@@ -46,13 +46,15 @@ h1 {
     gap: 20px;
     padding: 20px;
   }
+  .card-group > div {
+    height: 580px;
+  }
+  .card-group > div > img {
+    width: 140px;
+    height: 250px;
+  }
 }
 /* #links {
   border: 1px solid red;
   margin-left: 2%;
 } */
-#footer {
-  padding: 2px;
-  /* border: 1px solid red; */
-  width: 96%;
-}
