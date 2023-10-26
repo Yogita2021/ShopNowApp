@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MensProductService } from '../services/mens-product.service';
 import { CartService } from '../services/cart.service';
 import Swal from 'sweetalert2';
+import { WomensServicesService } from '../services/womens-services.service';
+import { KidService } from '../services/kid.service';
 // import { RazarpayService } from '../razarpay.service';
 // import Razorpay from 'razorpay';
 
@@ -19,17 +21,32 @@ export class ViewDetailsComponent implements OnInit {
   constructor(
     private activeRoute: ActivatedRoute,
     private MensService: MensProductService,
+    private WomensService: WomensServicesService,
+    private KidsService: KidService,
     private cartService: CartService,
     private router: Router
   ) {}
   ngOnInit(): void {
     let productId = this.activeRoute.snapshot.paramMap.get('productId');
+    let category = this.activeRoute.snapshot.paramMap.get('category');
     // console.log(productId);
+    console.log(category);
+
     if (productId) {
-      // Fetch the product details
-      this.MensService.getProductById(productId).subscribe((result) => {
-        this.mensProduct = result;
-      });
+      if (category === 'men') {
+        // Fetch the product details
+        this.MensService.getProductById(productId).subscribe((result) => {
+          this.mensProduct = result;
+        });
+      } else if (category === 'women') {
+        this.WomensService.getProductById(productId).subscribe((result) => {
+          this.mensProduct = result;
+        });
+      } else if (category == 'kid') {
+        this.KidsService.getProductById(productId).subscribe((result) => {
+          this.mensProduct = result;
+        });
+      }
 
       // Check if the product is in the cart
       this.checkProductInCart(productId);
@@ -101,9 +118,14 @@ export class ViewDetailsComponent implements OnInit {
         text: 'Want to add Product to the card please login!',
         showConfirmButton: true,
         confirmButtonText: 'Continue', // Customize the confirm button text
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.router.navigate(['login']);
+          // Handle the user's confirmation (e.g., navigate to a new page or perform other actions)
+        }
       });
       // Handle the case where the user data is not in local storage
-      this.router.navigate(['login']);
+      // this.router.navigate(['login']);
     }
   }
   checkProductInCart(productId: string) {

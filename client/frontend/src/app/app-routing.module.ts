@@ -9,6 +9,8 @@ import { ViewDetailsComponent } from './view-details/view-details.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MyOrderComponent } from './my-order/my-order.component';
+import { WomenProductComponent } from './women-product/women-product.component';
+import { KidsProductComponent } from './kids-product/kids-product.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -19,8 +21,10 @@ const routes: Routes = [
   { path: 'register/login', component: LoginComponent },
   { path: 'home', component: HomepageComponent },
   { path: 'product', component: ProductPageComponent },
+  { path: 'womenproduct', component: WomenProductComponent },
+  { path: 'kidsproduct', component: KidsProductComponent },
   { path: 'search/:query', component: SerchedProductsComponent },
-  { path: 'details/:productId', component: ViewDetailsComponent },
+  { path: 'details/:category/:productId', component: ViewDetailsComponent },
   { path: 'cart-page', component: CartPageComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'myOrder', component: MyOrderComponent },

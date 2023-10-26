@@ -61,19 +61,21 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  searchProduct(query: KeyboardEvent): void {
-    if (query) {
-      const element = query.target as HTMLInputElement;
-      const brandName = element.value;
+  searchProduct(event: Event): void {
+    const element = event.target as HTMLInputElement;
+    const brandName = element.value;
 
-      if (brandName) {
-        this.MensProduct.serachProductservice(brandName).subscribe((data) => {
-          if (data.length > 5) {
-            data.length = 5;
-          }
-          this.searchProducts = data;
-        });
-      }
+    if (brandName) {
+      this.MensProduct.searchByBrand(brandName).subscribe((result) => {
+        this.searchProducts = result.reduce(
+          (acc: any, val: any) => acc.concat(val),
+          []
+        );
+        console.log(this.searchProducts);
+        setTimeout(() => {
+          window.location.reload();
+        }, 7000); // 3000 milliseconds (3 seconds)
+      });
     }
   }
 

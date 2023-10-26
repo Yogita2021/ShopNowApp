@@ -21,22 +21,23 @@
           <a class="nav-link" aria-current="page" routerLink="product">Mens</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Womens</a>
+          <a class="nav-link" routerLink="womenproduct">Womens</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Kids</a>
+          <a class="nav-link" routerLink="kidsproduct">Kids</a>
         </li>
       </ul>
       <form class="d-flex" role="search" id="ullist">
         <input
           #serchedProducts
-          (keyup)="searchProduct($event)"
+          (input)="searchProduct($event)"
           (blur)="hideresults()"
           class="form-control me-2"
           type="search"
           placeholder="Search"
           aria-label="Search"
         />
+
         <button
           (click)="submitSearch(serchedProducts.value)"
           class="btn btn-outline-success"

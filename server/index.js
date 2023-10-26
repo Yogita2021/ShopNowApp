@@ -7,6 +7,8 @@ const { mensRouter } = require("./Router/mens.route");
 const { cartRouter } = require("./Router/cart.route");
 const { paymentrouter } = require("./Router/payment.route");
 const { orderRouter } = require("./Router/order.route");
+const { womensRouter } = require("./Router/women.route");
+const { kidsRouter } = require("./Router/kids.route");
 require("dotenv").config();
 // app.use(cors());
 app.use(
@@ -26,6 +28,8 @@ app.use("/mens", mensRouter);
 app.use("/cart", cartRouter);
 app.use("/payment", paymentrouter);
 app.use("/order", orderRouter);
+app.use("/women", womensRouter);
+app.use("/kid", kidsRouter);
 app.listen(process.env.PORT, async () => {
   try {
     await connection;

@@ -6,27 +6,20 @@
       <h5>Brands</h5>
       <div class="brand">
         <label
-          ><input type="checkbox" (change)="onBrandChange('Friskers')" />
-          Friskers
+          ><input type="checkbox" (change)="onBrandChange('Trendy Boys ')" />
+          Trendy Boys
         </label>
         <label
-          ><input type="checkbox" (change)="onBrandChange('Roadster')" />
-          Roadster
-        </label>
-        <label
-          ><input type="checkbox" (change)="onBrandChange('Tommy Hilfige')" />
-          Tommy Hilfige
-        </label>
-        <label
-          ><input type="checkbox" (change)="onBrandChange('Puma')" /> Puma
+          ><input type="checkbox" (change)="onBrandChange('Trendy Girl ')" />
+          Trendy Girl
         </label>
         <label
           ><input
             type="checkbox"
-            (change)="onBrandChange('HRX by Hrithik Roshan')"
+            (change)="onBrandChange('Cute Comfy Frocks ')"
           />
-          HRX by Hrithik Roshan</label
-        >
+          Cute Comfy Frocks
+        </label>
       </div>
     </div>
 
@@ -69,12 +62,6 @@
           <p class="card-text">
             <small class="text-body-secondary">₹ {{ item.price }}</small>
           </p>
-          <!-- <div class="card-button">
-            <button>
-              <a routerLink="/details/{{ item._id }}">View Details</a>
-            </button>
-            <button><i class="fa fa-heart"></i></button>
-          </div> -->
         </div>
       </div>
     </div>
