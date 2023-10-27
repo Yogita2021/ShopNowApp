@@ -71,10 +71,6 @@ export class NavbarComponent implements OnInit {
           (acc: any, val: any) => acc.concat(val),
           []
         );
-        console.log(this.searchProducts);
-        setTimeout(() => {
-          window.location.reload();
-        }, 7000); // 3000 milliseconds (3 seconds)
       });
     }
   }
@@ -134,21 +130,8 @@ export class NavbarComponent implements OnInit {
 
     if (userDataString) {
       const userData = JSON.parse(userDataString);
-      if (this.cartItem > 0) {
-        this.router.navigate(['myOrder']);
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'You are not placed the order yet',
-          showConfirmButton: true,
-          confirmButtonText: 'Continue', // Customize the confirm button text
-        }).then((result) => {
-          if (result.isConfirmed) {
-            // Handle the user's confirmation (e.g., navigate to a new page or perform other actions)
-          }
-        });
-      }
+
+      this.router.navigate(['myOrder']);
     } else {
       console.log('first place the order');
       Swal.fire({
