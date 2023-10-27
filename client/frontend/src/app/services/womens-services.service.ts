@@ -10,12 +10,12 @@ export class WomensServicesService {
 
   serachProductservice(query: string) {
     return this.http.get<any>(
-      `http://localhost:3000/women/womens/search?brand=${query}`
+      `https://shopnow-z6e3.onrender.com/women/womens/search?brand=${query}`
     );
   }
   getProductById(productId: string) {
     return this.http.get<any>(
-      `http://localhost:3000/women/womens/${productId}`
+      `https://shopnow-z6e3.onrender.com/women/womens/${productId}`
     );
   }
 }

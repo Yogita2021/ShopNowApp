@@ -28,15 +28,17 @@ export class ProductPageComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
-    this.http.get<any>(`http://localhost:3000/mens/mens`).subscribe((data) => {
-      console.log(data);
-      this.MensProduct = data;
-    });
+    this.http
+      .get<any>(`https://shopnow-z6e3.onrender.com/mens/mens`)
+      .subscribe((data) => {
+        console.log(data);
+        this.MensProduct = data;
+      });
   }
   onBrandChange(brand: string) {
     this.productName = brand;
     this.http
-      .get<any>(`http://localhost:3000/mens/mens?brand=${brand}`)
+      .get<any>(`https://shopnow-z6e3.onrender.com/mens/mens?brand=${brand}`)
       .subscribe(
         (data) => {
           console.log(data);
@@ -51,7 +53,7 @@ export class ProductPageComponent implements OnInit {
   filterByColor(color: string) {
     // console.log(color);
     this.http
-      .get<any>(`http://localhost:3000/mens/mens?color=${color}`)
+      .get<any>(`https://shopnow-z6e3.onrender.com/mens/mens?color=${color}`)
       .subscribe((data) => {
         console.log(data);
         this.MensProduct = data;
@@ -59,7 +61,9 @@ export class ProductPageComponent implements OnInit {
   }
   lHPrice() {
     this.http
-      .get<any>(`http://localhost:3000/mens/mens?sort=price&order=asc`)
+      .get<any>(
+        `https://shopnow-z6e3.onrender.com/mens/mens?sort=price&order=asc`
+      )
       .subscribe((data) => {
         console.log(data);
         this.MensProduct = data;
@@ -67,7 +71,9 @@ export class ProductPageComponent implements OnInit {
   }
   HlPrice() {
     this.http
-      .get<any>(`http://localhost:3000/mens/mens?sort=price&order=desc`)
+      .get<any>(
+        `https://shopnow-z6e3.onrender.com/mens/mens?sort=price&order=desc`
+      )
       .subscribe((data) => {
         console.log(data);
         this.MensProduct = data;

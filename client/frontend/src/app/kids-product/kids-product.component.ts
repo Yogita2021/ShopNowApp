@@ -25,15 +25,17 @@ export class KidsProductComponent implements OnInit {
   ];
   constructor(private http: HttpClient, private router: Router) {}
   ngOnInit(): void {
-    this.http.get<any>(`http://localhost:3000/kid/kids`).subscribe((data) => {
-      console.log(data);
-      this.MensProduct = data;
-    });
+    this.http
+      .get<any>(`https://shopnow-z6e3.onrender.com/kid/kids`)
+      .subscribe((data) => {
+        console.log(data);
+        this.MensProduct = data;
+      });
   }
   onBrandChange(brand: string) {
     this.productName = brand;
     this.http
-      .get<any>(`http://localhost:3000/kid/kids?brand=${brand}`)
+      .get<any>(`https://shopnow-z6e3.onrender.com/kid/kids?brand=${brand}`)
       .subscribe(
         (data) => {
           console.log(data);
@@ -48,7 +50,7 @@ export class KidsProductComponent implements OnInit {
   filterByColor(color: string) {
     // console.log(color);
     this.http
-      .get<any>(`http://localhost:3000/kid/kids?color=${color}`)
+      .get<any>(`https://shopnow-z6e3.onrender.com/kid/kids?color=${color}`)
       .subscribe((data) => {
         console.log(data);
         this.MensProduct = data;
@@ -56,7 +58,9 @@ export class KidsProductComponent implements OnInit {
   }
   lHPrice() {
     this.http
-      .get<any>(`http://localhost:3000/kid/kids?sort=price&order=asc`)
+      .get<any>(
+        `https://shopnow-z6e3.onrender.com/kid/kids?sort=price&order=asc`
+      )
       .subscribe((data) => {
         console.log(data);
         this.MensProduct = data;
@@ -64,7 +68,9 @@ export class KidsProductComponent implements OnInit {
   }
   HlPrice() {
     this.http
-      .get<any>(`http://localhost:3000/kid/kids?sort=price&order=desc`)
+      .get<any>(
+        `https://shopnow-z6e3.onrender.com/kid/kids?sort=price&order=desc`
+      )
       .subscribe((data) => {
         console.log(data);
         this.MensProduct = data;

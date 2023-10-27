@@ -11,7 +11,9 @@ export class LoginserviceService {
   // for login
   login(data: any) {
     this.http
-      .post('http://localhost:3000/user/login', data, { observe: 'response' })
+      .post('https://shopnow-z6e3.onrender.com/user/login', data, {
+        observe: 'response',
+      })
       .subscribe(
         (result) => {
           let userData = result.body;
@@ -72,7 +74,7 @@ export class LoginserviceService {
   //for register
   register(data: any) {
     this.http
-      .post(`http://localhost:3000/user/register`, data, {
+      .post(`https://shopnow-z6e3.onrender.com/user/register`, data, {
         observe: 'response',
       })
       .subscribe(

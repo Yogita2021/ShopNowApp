@@ -11,6 +11,7 @@
   /* border: 1px solid red; */
   height: 520px;
   align-items: center;
+  cursor: pointer;
   /* justify-content: center; */
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

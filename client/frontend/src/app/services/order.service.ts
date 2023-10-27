@@ -15,7 +15,9 @@ export class OrderService {
   order(data: any) {
     let userId = data.userId;
     this.http
-      .post('http://localhost:3000/order/', data, { observe: 'response' })
+      .post('https://shopnow-z6e3.onrender.com/order/', data, {
+        observe: 'response',
+      })
       .subscribe(
         (result) => {
           // console.log(result);
@@ -49,7 +51,7 @@ export class OrderService {
   }
 
   removeFromCart(userId: string) {
-    const url = `http://localhost:3000/cart/${userId}`;
+    const url = `https://shopnow-z6e3.onrender.com/cart/${userId}`;
 
     return this.http.delete(url).subscribe((result) => {
       console.log(result);
@@ -57,10 +59,10 @@ export class OrderService {
     });
   }
   orderDetails() {
-    return this.http.get<any>('http://localhost:3000/order/orders');
+    return this.http.get<any>('https://shopnow-z6e3.onrender.com/order/orders');
   }
   CancelOrder(Id: string) {
-    const url = `http://localhost:3000/order/orders/${Id}`;
+    const url = `https://shopnow-z6e3.onrender.com/order/orders/${Id}`;
 
     return this.http.delete(url);
   }

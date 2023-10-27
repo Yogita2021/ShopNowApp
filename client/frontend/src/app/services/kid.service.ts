@@ -10,10 +10,12 @@ export class KidService {
 
   serachProductservice(query: string) {
     return this.http.get<any>(
-      `http://localhost:3000/kid/kids/search?brand=${query}`
+      `https://shopnow-z6e3.onrender.com/kid/kids/search?brand=${query}`
     );
   }
   getProductById(productId: string) {
-    return this.http.get<any>(`http://localhost:3000/kid/kids/${productId}`);
+    return this.http.get<any>(
+      `https://shopnow-z6e3.onrender.com/kid/kids/${productId}`
+    );
   }
 }

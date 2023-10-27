@@ -19,7 +19,7 @@ export class CartService {
       const userData = JSON.parse(userDataString);
       const userId = userData.user._id;
       return this.http
-        .post(`http://localhost:3000/cart/add-to-cart`, product)
+        .post(`https://shopnow-z6e3.onrender.com/cart/add-to-cart`, product)
         .pipe(
           map((response: any) => {
             this.updateCartItemCount(userId); // Update count after addition
@@ -27,12 +27,17 @@ export class CartService {
           })
         );
     } else {
-      return this.http.post(`http://localhost:3000/cart/add-to-cart`, product);
+      return this.http.post(
+        `https://shopnow-z6e3.onrender.com/cart/add-to-cart`,
+        product
+      );
     }
   }
 
   getCartItemsByUserId(userId: string) {
-    return this.http.get<any[]>(`http://localhost:3000/cart/${userId}`);
+    return this.http.get<any[]>(
+      `https://shopnow-z6e3.onrender.com/cart/${userId}`
+    );
   }
 
   public updateCartItemCount(userId: string) {
@@ -43,7 +48,7 @@ export class CartService {
   }
 
   removeFromCart(userId: string, productId: string) {
-    const url = `http://localhost:3000/cart/${userId}/${productId}`;
+    const url = `https://shopnow-z6e3.onrender.com/cart/${userId}/${productId}`;
 
     return this.http.delete(url).pipe(
       map((response: any) => {
@@ -55,14 +60,16 @@ export class CartService {
   }
 
   checkProductInCart(userId: string, productId: string) {
-    const url = `http://localhost:3000/cart/${userId}/${productId}`;
+    const url = `https://shopnow-z6e3.onrender.com/cart/${userId}/${productId}`;
 
     return this.http.get<boolean>(url); // The API should return a boolean indicating presence
   }
   order(data: any) {
     let userId = data.userId;
     this.http
-      .post('http://localhost:3000/order/', data, { observe: 'response' })
+      .post('https://shopnow-z6e3.onrender.com/order/', data, {
+        observe: 'response',
+      })
       .subscribe(
         (result) => {
           // console.log(result);
@@ -95,7 +102,7 @@ export class CartService {
   }
 
   removeFromCartAll(userId: string) {
-    const url = `http://localhost:3000/cart/${userId}`;
+    const url = `https://shopnow-z6e3.onrender.com/cart/${userId}`;
 
     return this.http.delete(url).pipe(
       map((response: any) => {

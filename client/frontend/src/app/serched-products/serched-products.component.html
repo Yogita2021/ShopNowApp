@@ -10,7 +10,11 @@
       <p>₹ {{ item.price }}</p>
     </div>
     <div>
-      <button><a routerLink="/details/{{ item._id }}">View Details</a></button>
+      <button>
+        <a routerLink="/details/{{ item.category }}/{{ item._id }}"
+          >View Details</a
+        >
+      </button>
     </div>
   </div>
 </div>

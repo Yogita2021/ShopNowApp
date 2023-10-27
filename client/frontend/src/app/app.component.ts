@@ -15,7 +15,8 @@ export class AppComponent {
     return (
       currentRoute !== '/register/login' &&
       currentRoute !== '/register' &&
-      currentRoute !== '/register/login/register'
+      currentRoute !== '/register/login/register' &&
+      currentRoute !== '/login'
     );
   }
 }

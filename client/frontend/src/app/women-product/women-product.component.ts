@@ -26,7 +26,7 @@ export class WomenProductComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) {}
   ngOnInit(): void {
     this.http
-      .get<any>(`http://localhost:3000/women/womens`)
+      .get<any>(`https://shopnow-z6e3.onrender.com/women/womens`)
       .subscribe((data) => {
         console.log(data);
         this.MensProduct = data;
@@ -35,7 +35,7 @@ export class WomenProductComponent implements OnInit {
   onBrandChange(brand: string) {
     this.productName = brand;
     this.http
-      .get<any>(`http://localhost:3000/women/womens?brand=${brand}`)
+      .get<any>(`https://shopnow-z6e3.onrender.com/women/womens?brand=${brand}`)
       .subscribe(
         (data) => {
           console.log(data);
@@ -50,7 +50,7 @@ export class WomenProductComponent implements OnInit {
   filterByColor(color: string) {
     // console.log(color);
     this.http
-      .get<any>(`http://localhost:3000/women/womens?color=${color}`)
+      .get<any>(`https://shopnow-z6e3.onrender.com/women/womens?color=${color}`)
       .subscribe((data) => {
         console.log(data);
         this.MensProduct = data;
@@ -58,7 +58,9 @@ export class WomenProductComponent implements OnInit {
   }
   lHPrice() {
     this.http
-      .get<any>(`http://localhost:3000/women/womens?sort=price&order=asc`)
+      .get<any>(
+        `https://shopnow-z6e3.onrender.com/women/womens?sort=price&order=asc`
+      )
       .subscribe((data) => {
         console.log(data);
         this.MensProduct = data;
@@ -66,7 +68,9 @@ export class WomenProductComponent implements OnInit {
   }
   HlPrice() {
     this.http
-      .get<any>(`http://localhost:3000/women/womens?sort=price&order=desc`)
+      .get<any>(
+        `https://shopnow-z6e3.onrender.com/women/womens?sort=price&order=desc`
+      )
       .subscribe((data) => {
         console.log(data);
         this.MensProduct = data;
