@@ -16,7 +16,7 @@ app.use(
     origin: ["http://localhost:4200", "http://your-angular-app.com"],
   })
 );
-
+app.use(cors());
 app.use(express.json());
 // app.use("/", (req, res) => {
 //   res.json({ msg: "hello I am shopnow server" });
